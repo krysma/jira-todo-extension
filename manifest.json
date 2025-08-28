@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "JIRA Todo Organizer",
+  "version": "1.0.0",
+  "description": "Organize your JIRA tasks in a customizable todo list",
+  "permissions": [
+    "storage",
+    "sidePanel"
+  ],
+  "host_permissions": [
+    "https://*.atlassian.net/*",
+    "http://*/rest/api/*",
+    "https://*/rest/api/*"
+  ],
+  "options_page": "options.html",
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "action": {
+    "default_title": "Open JIRA Todo Panel"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}

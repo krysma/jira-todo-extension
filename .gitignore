@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+dist/
+build/
+*.zip
+
+# Icons (if using generated ones)
+icons/*.png
+icons/*.svg
+
+# Temporary files
+*.tmp
+*.temp
+.tmp/
+
+# Chrome extension development
+*.pem
+*.crx

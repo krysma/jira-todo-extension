@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JIRA Todo Organizer - Settings</title>
+    <link rel="stylesheet" href="styles/options.css">
+</head>
+<body>
+    <div class="container">
+        <h1>JIRA Todo Organizer Settings</h1>
+        
+        <div class="settings-section">
+            <h2>JIRA Configuration</h2>
+            
+            <div class="form-group">
+                <label for="jiraType">JIRA Instance Type</label>
+                <select id="jiraType">
+                    <option value="cloud">JIRA Cloud (*.atlassian.net)</option>
+                    <option value="server">JIRA Server/Data Center (Self-hosted)</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="jiraUrl">JIRA Instance URL</label>
+                <input type="url" id="jiraUrl" placeholder="https://your-domain.atlassian.net or https://jira.your-company.com">
+                <small>Enter the base URL of your JIRA instance</small>
+            </div>
+            
+            <div class="form-group">
+                <label for="username">Your Username/Email (optional)</label>
+                <input type="text" id="username" placeholder="your.email@company.com">
+                <small>Used to identify your tasks. Leave empty to auto-detect.</small>
+            </div>
+        </div>
+        
+        <div class="settings-section">
+            <h2>Task Filters</h2>
+            
+            <div class="form-group checkbox-group">
+                <label>
+                    <input type="checkbox" id="includeAssigned" checked>
+                    Include tasks assigned to me
+                </label>
+            </div>
+            
+            <div class="form-group checkbox-group">
+                <label>
+                    <input type="checkbox" id="includeReviewer" checked>
+                    Include tasks where I'm a reviewer
+                </label>
+            </div>
+            
+            <div class="form-group">
+                <label for="excludedStatuses">Excluded Statuses (comma-separated)</label>
+                <textarea id="excludedStatuses" rows="3" placeholder="Done, Closed, Resolved"></textarea>
+                <small>Tasks with these statuses will not be shown. One per line or comma-separated.</small>
+                <div class="common-statuses">
+                    <small>Quick add common statuses:</small>
+                    <div class="status-buttons">
+                        <button type="button" class="status-btn" data-status="Done">Done</button>
+                        <button type="button" class="status-btn" data-status="Closed">Closed</button>
+                        <button type="button" class="status-btn" data-status="Resolved">Resolved</button>
+                        <button type="button" class="status-btn" data-status="Complete">Complete</button>
+                        <button type="button" class="status-btn" data-status="Cancelled">Cancelled</button>
+                        <button type="button" class="status-btn" data-status="Rejected">Rejected</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="maxTasks">Maximum tasks to fetch</label>
+                <input type="number" id="maxTasks" min="10" max="200" value="50">
+            </div>
+        </div>
+        
+        <div class="settings-section">
+            <h2>Display Options</h2>
+            
+            <div class="form-group checkbox-group">
+                <label>
+                    <input type="checkbox" id="showPriority" checked>
+                    Show task priority
+                </label>
+            </div>
+            
+            <div class="form-group checkbox-group">
+                <label>
+                    <input type="checkbox" id="showStatus" checked>
+                    Show task status
+                </label>
+            </div>
+            
+            <div class="form-group checkbox-group">
+                <label>
+                    <input type="checkbox" id="autoRefresh" checked>
+                    Auto-refresh tasks (every 5 minutes)
+                </label>
+            </div>
+        </div>
+        
+        <div class="button-group">
+            <button id="saveBtn" class="btn btn-primary">Save Settings</button>
+            <button id="testBtn" class="btn btn-secondary">Test Connection</button>
+        </div>
+        
+        <div id="status" class="status-message"></div>
+    </div>
+    
+    <script src="js/options.js"></script>
+</body>
+</html>
