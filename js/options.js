@@ -25,7 +25,7 @@ function loadSettings() {
         jiraUrl: '',
         username: '',
         includeAssigned: true,
-        includeReviewer: true,
+        includeReviewer: false,
         excludedStatuses: 'Done, Closed, Resolved',
         maxTasks: 50,
         showPriority: true,
