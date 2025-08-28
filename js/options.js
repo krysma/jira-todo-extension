@@ -166,7 +166,7 @@ function toggleStatus(status) {
         currentStatuses.splice(index, 1);
     }
     
-    textarea.value = currentStatuses.join(', ');
+    textarea.value = currentStatuses.join(',');
     updateStatusButtons();
 }
 
